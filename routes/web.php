@@ -14,7 +14,8 @@ use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\BlogDetailsController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
-
+use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\RoleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +48,8 @@ Route::group(['prefix'=>'frontend','as'=>'frontend.'], function(){
 
 Route::group(['prefix'=>'backend','as'=>'backend.', 'middleware'=>['auth', 'verified']], function(){
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('employees', EmployeeController::class);
+    Route::resource('roles', RoleController::class);
     
 });
 
