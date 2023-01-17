@@ -27,13 +27,6 @@
                                     </div>
 
                                     <div class="col-12 mb-20">
-                                        <select class="form-control" name="role_id" id="status" placeholder="role">
-                                            <option value="admin">{{ __('Admin') }}</option>
-                                            <option value="customer">{{ __('Customer') }}</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-12 mb-20">
                                         <label for="remember" class="adomx-checkbox-2"><input id="remember" type="checkbox"><i class="icon"></i>Remember.</label>
                                     </div>
 

@@ -23,14 +23,13 @@ class RoleController extends Controller
 
     public function store(Request $request)
     {
-        $this->authorize('Roles & Permission Create');
         $request->validate([
             'name' => ['required', 'max:255', 'unique:roles,name,'],
         ]);
 
-        Role::create([
+        $role = Role::create([
             'name' => $request->name,
-            'guard' => 'web',
+            'guard_name' => 'web',
         ]);
         if($request->get('permission')){
             foreach($request->get('permission') as $prm){

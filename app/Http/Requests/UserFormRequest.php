@@ -2,9 +2,12 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules;
 
-class EmployeeFormRequest extends FormRequest
+class UserFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -20,11 +23,7 @@ class EmployeeFormRequest extends FormRequest
     {
         return [
 
-            'first_name' => [
-                'required',
-                'max:255',
-            ],
-            'last_name' => [
+            'name' => [
                 'required',
                 'max:255',
             ],
@@ -34,14 +33,14 @@ class EmployeeFormRequest extends FormRequest
             ],
             'email' => [
                 'email',
-                'unique:employees,email,'.$this->employee->id,
+                Rule::unique(User::class)->ignore($this->user->id ?? null),
             ],
             'phone' => [
                 'nullable',
                 'max:255',
             ],
             'password' => [
-                'nullable',
+                'required', Rules\Password::defaults(),
             ],
             'gender' => [
                 'nullable',

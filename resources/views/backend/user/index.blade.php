@@ -33,20 +33,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($employees as $employee)
+                                @foreach($users as $user)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
-                                    <td>{{ $employee->first_name. ' '.$employee->last_name }}</td>
-                                    <td>{{ $employee->provider_id }}</td>
-                                    <td>{{ $employee->email }}</td>
-                                    <td>{{ $employee->phone }}</td>
-                                    <td>{{ $employee->gender }}</td>
-                                    <td>{{ $employee->role_id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->provider_id }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->phone }}</td>
+                                    <td>{{ $user->gender }}</td>
+                                    <td>{{ $user->role_id }}</td>
                                     <td class="d-flex">
-                                        <a href="{{ route('backend.employees.edit', $employee->id)}}" class="btn btn-sm">
+                                        <a href="{{ route('backend.users.edit', $user->id)}}" class="btn btn-sm">
                                             <i class="ph-note-pencil-bold text-primary fs-3"></i>
                                         </a>
-                                        <form action="{{ route('backend.employees.destroy', $employee->id) }}" method="POST">
+                                        <form action="{{ route('backend.users.destroy', $user->id) }}" method="POST">
                                             @csrf
                                             @method('Delete')
                                             <button class="btn btn-sm">

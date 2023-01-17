@@ -17,8 +17,8 @@
                 <li class="has-sub-menu"><a href="#"><i class="ti-package"></i> <span>Manage Role</span></a>
                     <ul class="side-header-sub-menu">
                         <li><a href="{{ route('backend.roles.index') }}"><span>Role & Permission</span></a></li>
-                        <li><a href="{{ route('backend.employees.create') }}"><span>Create Employee</span></a></li>
-                        <li><a href="{{ route('backend.employees.index') }}"><span>List Employee </span></a></li>
+                        <li><a href="{{ route('backend.users.create') }}"><span>Create Employee</span></a></li>
+                        <li><a href="{{ route('backend.users.index') }}"><span>List Employee </span></a></li>
                     </ul>
                 </li>
             </ul>

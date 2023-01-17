@@ -3,7 +3,7 @@
         <div class="row justify-content-between align-items-center mb-10">
             <div class="col-12 col-lg-auto mb-20">
                 <div class="page-heading">
-                    <h3>Employee <span>/ eCommerce</span></h3>
+                    <h3>user <span>/ eCommerce</span></h3>
                 </div>
             </div>
             <div class="col-12 col-lg-auto mb-20">
@@ -14,29 +14,21 @@
             <div class="col-12 mb-30">
                 <div class="box">
                     <div class="box-head d-flex justify-content-between">
-                        <h3 class="title">{{ isset($employee) ? __('Update employee') : __('Add Employee') }}</h3>
-                        <a href="{{ route('backend.employees.index') }}" class="button button-primary button-outline button-sm">Back</a>
+                        <h3 class="title">{{ isset($user) ? __('Update user') : __('Add user') }}</h3>
+                        <a href="{{ route('backend.users.index') }}" class="button button-primary button-outline button-sm">Back</a>
                     </div>
                     <div class="box-body">
-                        <form action="{{ isset($employee) ? route('backend.employees.update', $employee->id) : route('backend.employees.store') }}" method="POST">
+                        <form action="{{ isset($user) ? route('backend.users.update', $user->id) : route('backend.users.store') }}" method="POST">
                             @csrf
-                            @isset($employee) @method('PUT') @endisset
+                            @isset($user) @method('PUT') @endisset
                             <div class="row">
+                    
                                 <x-ui.input
                                     group="col-md-4"
-                                    :label="__('First Name')"
-                                    name="first_name"
-                                    id="first_name"
-                                    :value="$employee->first_name ?? null"
-                                    required
-                                />
-
-                                <x-ui.input
-                                    group="col-md-4"
-                                    :label="__('Last Name')"
-                                    name="last_name"
-                                    id="last_name"
-                                    :value="$employee->last_name ?? null"
+                                    :label="__('Name')"
+                                    name="name"
+                                    id="name"
+                                    :value="$user->name ?? null"
                                     required
                                 />
 
@@ -45,7 +37,7 @@
                                     :label="__('Provider Id')"
                                     name="provider_id"
                                     id="provider_id"
-                                    :value="$employee->provider_id ?? null "
+                                    :value="$user->provider_id ?? null "
                                     required
                                 />
                             </div>
@@ -57,7 +49,7 @@
                                     :label="__('Email')"
                                     name="email"
                                     id="email"
-                                    :value="$employee->email ?? null"
+                                    :value="$user->email ?? null"
                                     required
                                 />
 
@@ -66,7 +58,7 @@
                                     :label="__('Phone')"
                                     name="phone"
                                     id="phone"
-                                    :value="$employee->phone ?? null"
+                                    :value="$user->phone ?? null"
                                     required
                                 />
 
@@ -98,8 +90,9 @@
                                         <label class="label-control">{{ __('Role') }}</label>
                                         <div>
                                             <select class="form-control" name="role_id" id="role_id">
-                                                <option value="customer">{{ __('Customer') }}</option>
-                                                <option value="admin">{{ __('Admin') }}</option>
+                                                @foreach($roles as $role)
+                                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -118,8 +111,9 @@
 <x-layouts.backend.script>
     <script>
         $(document).ready(function(){
-        $('#role_id').val("{{$employee->role_id ?? 'customer'}}");
-        $('#gender').val("{{$employee->gender ?? ''}}");
+     
+        $('#gender').val("{{$user->gender ?? ''}}");
+        $('#role_id').val("{{$user->role_id ?? ''}}");
         });
     </script>
 </x-layouts.backend.script>
