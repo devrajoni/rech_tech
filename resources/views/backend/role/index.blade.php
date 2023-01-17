@@ -31,20 +31,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>
-                                        <a class="btn btn-sm">
-                                            <i class="ph-note-pencil-bold text-primary fs-3"></i>
-                                        </a>
-                                        <a class="btn btn-sm">
-                                            <i class="ph-trash-bold text-danger fs-3"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                @foreach($roles as $role)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $role->name }}</td>
+                                        <td></td>
+                                        <td>1</td>
+                                        <td class="d-flex">
+                                            <a href="{{ route('backend.roles.edit', $role->id )}}" class="btn btn-sm">
+                                                <i class="ph-note-pencil-bold text-primary fs-3"></i>
+                                            </a>
+                                            <form action="{{ route('backend.roles.destroy', $role->id)}}" method="POST" onsubmit="return confirm('Are you sure?');">
+                                                @csrf
+                                                @method('delete')
+                                                <button  class="btn btn-sm">
+                                                    <i class="ph-trash-bold text-danger fs-3"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

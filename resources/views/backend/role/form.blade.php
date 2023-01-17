@@ -14,7 +14,7 @@
             <div class="col-12 mb-20">
                 <div class="box">
                     <div class="box-head d-flex justify-content-between">
-                        <h3 class="title">Add Role & Permission</h3>
+                        <h3 class="title">{{ isset($role) ? __('Update Role') : __('Add Role') }}</h3>
                         <div class="card-options card-header-styles switch pe-3">
                             <div class="switch_section my-0">
                                 <div class="switch-toggle d-flex float-end mt-2 me-5">
@@ -27,8 +27,10 @@
                             </div>
                         </div>
                     </div>
-                    <form action="{{ route('backend.roles.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ isset($role) ? route('backend.roles.update', $role->id) : route('backend.roles.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @isset($role) @method('PUT') @endisset
+
                         <div class="box-body">
                             <div class="row">
                                 <x-ui.input
@@ -36,6 +38,7 @@
                                     :label="__('Role')"
                                     name="name"
                                     id="name"
+                                    :value="$role->name ?? null"
                                     required
                                 />
                             </div>
@@ -63,9 +66,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 mt-3 d-flex justify-content-end">
-                                <button type="submit" class="button button-primary button-outline button-sm mr-3">Submit</button>
-                            </div>
+                        </div>
+                        <div class="col-12 mt-3 d-flex">
+                            <button type="submit" class="button button-primary button-outline button-sm mr-3">Submit</button>
+                            <a href="{{ route('backend.roles.index') }}"  class="button button-primary button-outline button-sm mr-3">Back</a>
                         </div>
                     </form>
                 </div>
@@ -73,3 +77,4 @@
         </div>
     </div>
 </x-layouts.backend>
+

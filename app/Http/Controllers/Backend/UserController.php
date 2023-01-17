@@ -73,6 +73,8 @@ class UserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
+
+        return redirect()->route('backend.users.index')->flashify('Created', 'Data has been created successfully.');
     }
 
     public function show($id)
@@ -100,10 +102,14 @@ class UserController extends Controller
             'role_id' => $request->role_id,
 
         ]);
+
+        return redirect()->route('backend.users.index')->flashify('Updated', 'Data has been updated successfully.');
     }
 
     public function destroy(User $user)
     {
         $user->delete();
+
+        return redirect()->route('backend.users.index')->flashify('deleted', 'Data has been deleted successfully.');
     }
 }

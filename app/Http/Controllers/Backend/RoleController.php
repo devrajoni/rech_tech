@@ -12,12 +12,13 @@ class RoleController extends Controller
 {
     public function index()
     {
-        return view('backend.role.index');
+        $data['roles'] = Role::get();
+        return view('backend.role.index', $data);
     }
 
     public function create()
     {
-        $data['permissions'] = Permission::all();
+        $data['permissions'] = Permission::get();
         return view('backend.role.form', $data);
     }
 
@@ -36,6 +37,8 @@ class RoleController extends Controller
                 $role->givePermissionTo($prm);
             }
         }
+
+        return redirect()->route('backend.roles.index')->flashify('Created', 'Data has been created successfully.');
      
     }
 
@@ -44,18 +47,48 @@ class RoleController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Role $role)
     {
-        //
+        $data['permissions'] = Permission::get();
+        $data['role'] = $role;
+        return view('backend.role.form', $data);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Role $role)
     {
-        //
+        $roles = $role;
+        if($roles->name == $request->name){
+            if($request->get('permission')){
+                foreach ($request->get('permission') as $value) {
+                    $permission[] = $value;
+                }
+            }
+
+            $roles->syncPermissions($request->get('permission'));
+        }
+        else{
+            $request->validate([
+                'name' => ['required', 'max:255', 'unique:roles,name,'],
+            ]);
+
+            $role->update([  'name' => $request->name,
+            'guard_name' => 'web',]);
+            if($request->get('permission')){
+                foreach ($request->get('permission') as $value) {
+                    $permission[] = $value;
+                }
+            }
+            $role->syncPermissions($request->get('permission'));
+        }
+
+        return redirect()->route('backend.roles.index')->flashify('Updated', 'Data has been updated successfully.');
+
     }
 
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        //
+        $role->delete();
+
+        return redirect()->route('backend.roles.index')->flashify('deleted', 'Data has been deleted successfully.');
     }
 }

@@ -14,7 +14,7 @@
             <div class="col-12 mb-30">
                 <div class="box">
                     <div class="box-head d-flex justify-content-between">
-                        <h3 class="title">{{ isset($user) ? __('Update user') : __('Add user') }}</h3>
+                        <h3 class="title">{{ isset($user) ? __('Update User') : __('Add User') }}</h3>
                         <a href="{{ route('backend.users.index') }}" class="button button-primary button-outline button-sm">Back</a>
                     </div>
                     <div class="box-body">

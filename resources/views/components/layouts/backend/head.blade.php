@@ -14,4 +14,4 @@
 <link rel="stylesheet" href="{{ asset('backend/assets/css/helper.css') }}">
 <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.css" />
-<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css" />
