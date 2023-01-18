@@ -6,7 +6,7 @@
                     <div class="themesflat-spacer clearfix" data-desktop="114" data-mobile="60" data-smobile="60"></div>
                     <div class="themesflat-headings style-1 text-center wow fadeInUp clearfix">
                         <h1 class="heading">SERVICES FOR YOU</h1>
-                        <p class="sub-heading">Fonsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut<br>labore et dolore magna aliquyam</p>
+                        <p class="sub-heading">In REES TECH, we can offer you some services that help in using solar energy and preserving the environment.</p>
                     </div> 
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->

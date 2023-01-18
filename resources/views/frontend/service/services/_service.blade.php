@@ -7,14 +7,14 @@
                     <div class="themesflat-headings style-2 text-center wow fadeInUp clearfix">
                         <span class="heading-shadown-text">SERVICES</span>
                         <h1 class="heading">SERVICES FOR YOU</h1>
-                        <p class="sub-heading">Fonsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut<br>labore et dolore magna aliquyam</p>
+                        <p class="sub-heading">In REES TECH, we can offer you some services that help in using solar energy and preserving the environment.</p>
                     </div>
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->
         </div>
     </div>
     <div id="service-inner" class="container">
-        <div class="row">
+        <div class="row text center">
             <div class="col-md-4">
                 <div class=" box-service margin-bottom-300 wow fadeInDown ">
                     <div class="service-inner-img">
@@ -86,8 +86,8 @@
                     </div>
                 </div>
             </div><!-- /.col-md-4 -->
-            <div class="col-md-4 ">
-                <div class="box-service wow fadeInUp " >
+            <div class="col-md-4  ">
+                <div class="box-service wow fadeInUp ">
                     <div class="service-inner-img">
                         <div class="img-overlay"></div>
                         <img src="{{ asset('frontend/assets/img/shortcode/service/service-2.jpg') }}" alt="Image">
@@ -98,7 +98,7 @@
                         <div class="text-wrap">
                             <h3 class="heading"><a href="{{ route('frontend.service-details') }}">Gynecology</a></h3>
                             <div class="sep clearfix"></div>
-                            <p class="sub-heading">The leading provider in the majority of our current markets, which we support with a high-quality asset base and service.</p>
+                            <p class="sub-heading ">The leading provider in the majority of our current markets, which we support with a high-quality asset base and service.</p>
                             <a href="{{ route('frontend.service-details') }}" class="service-read-more">Read More <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>

@@ -36,7 +36,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $role->name }}</td>
                                         <td></td>
-                                        <td>1</td>
+                                        <td></td>
                                         <td class="d-flex">
                                             <a href="{{ route('backend.roles.edit', $role->id )}}" class="btn btn-sm">
                                                 <i class="ph-note-pencil-bold text-primary fs-3"></i>

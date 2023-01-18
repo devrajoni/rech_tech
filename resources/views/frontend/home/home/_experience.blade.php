@@ -5,23 +5,7 @@
                 <h1 class="heading-experiences">EXPERIENCED WORKERS</h1>
             </div>
             <div class="row">
-                <p class="content">Our people are a key asset for our business. We nurture and invest in our people by giving them the tools to be effective in their work and by growing their skills as we grow. Our ambition is to build an engaged, happy, creative and productive workforce by fostering an inclusive and collaborative environment that reflects our vision and our values.</p>
-            </div>
-            <div class="row">
-                <div class="link wow fadeInRight">
-                    <div class="link-1">
-                        <ul>
-                            <li class="left"><a href="{{ route('frontend.service-details') }}"><i class="zingbox-icon-check"></i>Sonsectetur adipisicing elit</a></li>
-                            <li class="left"><a href="{{ route('frontend.service-details') }}"><i class="zingbox-icon-check"></i>Exercitation ullamco laboris</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-2">
-                        <ul>
-                            <li class="right"><a href="{{ route('frontend.service-details') }}"><i class="zingbox-icon-check"></i>Eiusmod tempor incididunt</a></li>
-                            <li class="right"><a href="{{ route('frontend.service-details') }}"><i class="zingbox-icon-check"></i>Aolore magna aliqua</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <p class="content">Workers are the cornerstone of our business, so we try to provide them with all the necessary needs in order to work more effectively. We always aspire to achieve development, creativity and a sense of safety for our workers by creating the environment surrounding them for that, and this reflects our vision and values.</p>
             </div>
         </div>
         <div class="row row-experiences-bottom wow fadeInUp" >

@@ -55,7 +55,7 @@
                                                 <div class="switch_section">
                                                     <div class="switch-toggle d-flex">
                                                         <a class="onoffswitch2">
-                                                            <input type="checkbox" name="permission[]" id="myonoffswitch {{ $permission->id }}" class=" toggle-class onoffswitch2-checkbox rolecheck" Value="{{ $permission->id }}" >
+                                                            <input type="checkbox" name="permission[]" id="myonoffswitch {{ $permission->id }}" class=" toggle-class onoffswitch2-checkbox rolecheck" Value="{{$permission->id}}"  {{ $role->hasPermissionTo($permission->name) ? 'checked' : '' }} >
                                                             <label for="myonoffswitch {{ $permission->id }}" class="toggle-class onoffswitch2-label" ></label>
                                                         </a>
                                                         <label class="form-label ps-3">{{ $permission->name }}</label>
@@ -77,4 +77,39 @@
         </div>
     </div>
 </x-layouts.backend>
+
+<x-layouts.backend.script>
+    <script>
+        "use strict";
+
+        (function($)  {
+
+            // select all switch
+            $('#rolecheckall').on('click', function() {
+                if(this.checked){
+                    $('.rolecheck').each(function(){
+                        this.checked = true;
+                    });
+                }else{
+                    $('.rolecheck').each(function(){
+                        this.checked = false;
+                    });
+                }
+
+            });
+
+            // select all switch
+            $('.rolecheck').on('click',function(){
+                if($('.rolecheck:checked').length == $('.rolecheck').length){
+                    $('#rolecheckall').prop('checked',true);
+                }else{
+                    $('#rolecheckall').prop('checked',false);
+                }
+            });
+
+        })(jQuery);
+
+
+    </script>
+</x-layouts.backend.script>
 

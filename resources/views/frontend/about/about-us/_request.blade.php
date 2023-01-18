@@ -6,7 +6,7 @@
             <div class="row-request-right wow fadeInUp"> 
                 <div class="themesflat-headings style-1  clearfix wow fadeInUp">
                     <h1 class="heading padding-bottom-10">EXPERIENCED WORKERS</h1>
-                    <p class="sub-heading padding-bottom-40">Our people are a key asset for our business. We nurture and invest in our people by giving them the tools to be effective in their work and by growing their skills as we grow.</p>
+                    <p class="sub-heading padding-bottom-40">Workers are the cornerstone of our business, so we try to provide them with all the necessary needs in order to work more effectively. We always aspire to achieve development, creativity and a sense of safety for our workers by creating the environment surrounding them for that, and this reflects our vision and values.</p>
                 </div>
                 <div class="service-inner-text style-3 wow fadeInUp">
                     <div class="icon zingbox-icon-Solar-power-light "></div>

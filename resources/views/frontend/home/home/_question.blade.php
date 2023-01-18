@@ -8,7 +8,7 @@
                 <div class="themesflat-headings style-2 question  wow fadeInUp clearfix">
 
                     <h1 class="heading ">WHAT OUR CLIENTS SAY</h1>
-                    <p class="sub-heading">Our customers are at the centre of everything we do. Our customers choose us to accelerate their growth ambitions and to lower their costs of delivering crucial services. </p>
+                    <p class="sub-heading">The workers who installed the solar panels were quick, accurate and well-mannered, I am really happy to deal with Rees Tech.</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-4">
@@ -24,7 +24,7 @@
                     <div class="swiper-slide item1 wow fadeInUp">
                         <div class="box-question ">
                             <span class="fa fa-quote-left"></span>
-                            <p>Our customers are at the centre of everything we do. Our customers choose us to accelerate their growth ambitions and to lower their costs of delivering crucial services. </p>
+                            <p> have never met a company that cares about customers like this before and does its job to the fullest, very quickly and without mistakes.</p>
                             <div class="author">
                                 <img src="{{ asset('frontend/assets/img/shortcode/question/question-left-1.png') }}" alt="Image">
                                 <div class="author-content">
@@ -37,7 +37,7 @@
                     <div class="swiper-slide item2 wow fadeInDown">
                         <div class=" box-question box2">
                             <span class="fa fa-quote-left"></span>
-                            <p>Our customers are at the centre of everything we do. Our customers choose us to accelerate their growth ambitions and to lower their costs of delivering crucial services. </p>
+                            <p>The prices are very reasonable and the dealings are very pleasant, from the first call until the completion of the installation.</p>
                             <div class="author">
                                 <img src="{{ asset('frontend/assets/img/shortcode/question/question-left-2.png') }}" alt="Image">
                                 <div class="author-content">
@@ -50,7 +50,7 @@
                     <div class="swiper-slide item1 wow fadeInUp">
                         <div class="box-question ">
                             <span class="fa fa-quote-left"></span>
-                            <p>Our customers are at the centre of everything we do. Our customers choose us to accelerate their growth ambitions and to lower their costs of delivering crucial services. </p>
+                            <p>I found great attention towards me as soon as I ordered and everything was very organized and highly efficient.</p>
                             <div class="author">
                                 <img src="{{ asset('frontend/assets/img/shortcode/question/question-left-1.png') }}" alt="Image">
                                 <div class="author-content">

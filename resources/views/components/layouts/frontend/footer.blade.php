@@ -6,7 +6,7 @@
                 <div class="widget widget_text">
                     <div class="textwidget">
                         <img src="{{ asset('frontend/assets/img/logo-dark.png') }}" alt="Image" >
-                        <p class="margin-bottom-15">Rees Tech has established the tradition of ‘Best management practices’ in the industry through integrity, trustworthiness and high-quality work.</p>
+                        <p class="margin-bottom-15">REES TECH operates with a well-thought-out plan based on scientific foundations to provide you with solar energy solutions with more accuracy and lower cost.To contact our experts, please send an e-mail with your inquiry</p>
                         <div class="footer-socials">
                             <div class="inner">                               
                                 <span class="icons">

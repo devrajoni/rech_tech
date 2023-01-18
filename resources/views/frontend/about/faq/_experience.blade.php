@@ -6,7 +6,7 @@
                 <div class="themesflat-headings style-2 wow fadeInUp clearfix">
                     <span class="heading-shadown-text">WORKERS</span>
                     <h1 class="heading">EXPERIENCED WORKERS</h1>
-                    <p class="sub-heading">Aliquam faucibus, odio nec commodo aliquam, neque felis placerat dui, a porta ante lectus dapibus est. Aliquam</p>
+                    <p class="sub-heading">Workers are the cornerstone of our business, so we try to provide them with all the necessary needs in order to work more effectively. We always aspire to achieve development, creativity and a sense of safety for our workers by creating the environment surrounding them for that, and this reflects our vision and values.</p>
                 </div>
                 <ul class="tab-title title wow fadeInUp">
                     <li class="item-title active"><span>Vision</span> </li>
@@ -17,17 +17,7 @@
                     <div class="tab-content">
                         <div class="item-content">
                             <div class="infor ">
-                                <span>Aliquam faucibus, odio nec commodo aliquam, neque felis placerat dui, a porta ante lectus dapibus est. Aliquam a bibendum mi, sed condimentum</span>
-                            </div>
-                            <div class="link ">
-                                <ul class="first">
-                                    <li><i class="zingbox-icon-check"></i><a href="{{ route('frontend.service-details') }}">Sonsectetur adipisicing elit</a></li>
-                                    <li><i class="zingbox-icon-check"></i><a href="{{ route('frontend.service-details') }}">Exercitation ullamco laboris </a></li>
-                                </ul>
-                                <ul>
-                                    <li><i class="zingbox-icon-check"></i><a href="{{ route('frontend.service-details') }}">Eiusmod tempor incididunt </a></li>
-                                    <li><i class="zingbox-icon-check"></i><a href="{{ route('frontend.service-details') }}">Aolore magna aliqua</a></li>
-                                </ul>
+                                <span>We at REES TECH are trying so hard to achieve environmental balance by harnessing solar energy to meet energy requirements around the world, because solar energy is one of the largest renewable and clean energy sources compared to other types such as coal, oil and natural gas.</span>
                             </div>
                         </div>
                     </div><!-- /.tab-content -->

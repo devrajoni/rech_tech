@@ -41,27 +41,23 @@
         <div class="row">
             <div class="col-md-12"><h1>OUR MAIN GOALS</h1></div>
             <div class="col-md-6">
-                <p class="margin-top-4">We offer a variety of fiber solutions from our towers and other connectivity services to support our customers’ digital strategies.This Group is Premier Provider of Fiber Optic and Electrical Services to the Telecom and Renewable Industries. We provide fiber optic terminations, OTDR and power meter testing, fusion splicing, fiber placement, extensive fiber optic and copper infrastructure installation, cable jetting, boring and trenching, industry specific maintenance, and design and material procurement.</p>
+                <p class="margin-top-4">We at REES TECH are trying so hard to achieve environmental balance by harnessing solar energy to meet energy requirements around the world, because solar energy is one of the largest renewable and clean energy sources compared to other types such as coal, oil and natural gas.</p>
             </div>
             <div class="col-md-6">
                 <div class="our-main-goal-inner">
                     <div class="content one">
-                        <a class="title" href="{{ route('frontend.service-details') }}">Quality Control System</a>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+                       <h3> <a class="title" href="{{ route('frontend.service-details') }}">Smart solutions for businesses</a></h3>
+                        <p>Our professional consultants are fully trained to assess your energy needs when designing your custom solar system. As soon as your new solar system is switched on you’ll start producing your own electricity and you’ll start saving on power costs!</p>
                     </div>
                     <div class="content two margin-left-16">
-                        <a class="title" href="{{ route('frontend.service-details') }}">Highly Professional Staff</a>
-                        <p>The leading provider in the majority of our current markets, which we support with a high-quality asset base and service.</p>
+                        <a class="title" href="{{ route('frontend.service-details') }}">Waste management</a>
+                        <p>If you are already using solar energy panels to produce energy for your home, then you will definitely need to replace them at any time, and therefore we will have a very large number of waste solar energy panels, so we offer you the service of collecting solar waste and disposing of it safely</p>
                     </div>
                 </div>
                 <div class="our-main-goal-inner">
                     <div class="content tree">
-                        <a class="title" href="{{ route('frontend.service-details') }}">Quality Control System</a>
-                        <p>The leading provider in the majority of our current markets, which we support with a high-quality asset base and service.</p>
-                    </div>
-                    <div class="content four margin-left-16">
-                        <a class="title" href="{{ route('frontend.service-details') }}">Highly Professional Staff</a>
-                        <p>The leading provider in the majority of our current markets, which we support with a high-quality asset base and service.</p>
+                        <a class="title" href="{{ route('frontend.service-details') }}">O&M and upgrades</a>
+                        <p>When you install a solar system, you must secure it with all services, and one of the most important services that can be provided is the operation and maintenance service. The wrong operation or maintenance process can lead to problems in the entire system, so we offer you the operation and maintenance service through a qualified team that takes care of your solar system well to protect its service life</p>
                     </div>
                 </div>
             </div>

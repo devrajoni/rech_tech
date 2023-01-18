@@ -6,7 +6,7 @@
                 <div class="themesflat-headings our-team style-2 text-center wow fadeInUp clearfix">
                     <span class="heading-shadown-text style-3">OUR TEAM</span>
                     <h1 class="heading">OUR CREATIVE TEAM</h1>
-                    <p class="sub-heading">Our people are a key asset for our business. We nurture and invest in our people by giving them the tools to be effective in their work and by growing their skills as we grow.</p>
+                    <p class="sub-heading">Work team is the destination that indicates the entire organization, and we have a strong, distinguished team with a great history in our field.</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="64" data-mobile="35" data-smobile="35"></div>
             </div><!-- /.col-md-12 -->
