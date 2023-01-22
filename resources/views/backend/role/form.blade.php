@@ -55,7 +55,7 @@
                                                 <div class="switch_section">
                                                     <div class="switch-toggle d-flex">
                                                         <a class="onoffswitch2">
-                                                            <input type="checkbox" name="permission[]" id="myonoffswitch {{ $permission->id }}" class=" toggle-class onoffswitch2-checkbox rolecheck" Value="{{$permission->id}}"  {{ $role->hasPermissionTo($permission->name) ? 'checked' : '' }} >
+                                                            <input type="checkbox" name="permission[]" id="myonoffswitch {{ $permission->id }}" class=" toggle-class onoffswitch2-checkbox rolecheck" Value="{{$permission->id}}"  {{ isset($role) ? ($role->hasPermissionTo($permission->name) ? 'checked' : '') : '' }} >
                                                             <label for="myonoffswitch {{ $permission->id }}" class="toggle-class onoffswitch2-label" ></label>
                                                         </a>
                                                         <label class="form-label ps-3">{{ $permission->name }}</label>
@@ -112,4 +112,3 @@
 
     </script>
 </x-layouts.backend.script>
-

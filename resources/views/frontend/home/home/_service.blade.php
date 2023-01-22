@@ -25,7 +25,7 @@
                         <div class="text-wrap">
                             <h3 class="heading"><a href="{{ route('frontend.service-details') }}">1-Waste management</a></h3>
                             <div class="sep clearfix"></div>
-                            <p class="sub-heading w-50">If you are already using solar energy panels to produce energy for your home, then you will definitely need to replace them at any time.</p>
+                            <p class="sub-heading w-50" style="min-height: 80px;">If you are already using solar energy panels to produce energy for your home, then you will definitely need to replace them at any time.</p>
                         </div>
                         <a href="{{ route('frontend.service-details') }}" class="service-read-more">Read More <i class="fa fa-arrow-right"></i> </a>
                     </div>
@@ -43,7 +43,7 @@
                         <div class="text-wrap">
                             <h3 class="heading"><a href="{{ route('frontend.service-details') }}">2- O&M and upgrades</a></h3>
                             <div class="sep clearfix"></div>
-                            <p class="sub-heading w-50">When you install a solar system, you must secure it with all services, and one of the most important services that can be provided is the operation.</p>
+                            <p class="sub-heading w-50" style="min-height: 80px;">When you install a solar system, you must secure it with all services, and one of the most important services that can be provided is the operation.</p>
                             <a href="{{ route('frontend.service-details') }}" class="service-read-more">Read More <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div>
                             <h3 class="heading"><a href="{{ route('frontend.service-details') }}">3- Smart solutions for businesses</a></h3>
                             <div class="sep clearfix"></div>
-                            <p class="sub-heading w-50">Our professional consultants are fully trained to assess your energy needs when designing your custom solar system.</p>
+                            <p class="sub-heading w-50" style="min-height: 80px;">Our professional consultants are fully trained to assess your energy needs when designing your custom solar system.</p>
                             <a href="{{ route('frontend.service-details') }}" class="service-read-more">Read More <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>

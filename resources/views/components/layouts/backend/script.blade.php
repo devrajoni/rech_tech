@@ -16,6 +16,8 @@
 <script src="{{ asset('backend/assets/js/plugins/vmap/vmap.active.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
+<livewire:scripts />
+
 <x-flashify::scripts />
 
 {{ $slot }}

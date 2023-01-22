@@ -33,7 +33,7 @@
                             <img src="{{ asset('frontend/assets/img/shortcode/work/work-1.png') }}" alt="Image">
                             <div class="text-wrap">
                                 <h6 class="heading">1. Set Up Scaffolding</h6>
-                                <p class="sub-heading">Firstly, you have to erect scaffolding to ensure safety during the whole installation process when being on the roof.</p>
+                                <p class="sub-heading" style="min-height: 200px;">Firstly, you have to erect scaffolding to ensure safety during the whole installation process when being on the roof.</p>
                                 <a href="{{ route('home') }}" class="btn-read-more">Read More <i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <img src="{{ asset('frontend/assets/img/shortcode/work/work-2.png') }}" alt="Image">
                             <div class="text-wrap">
                                 <h6 class="heading">2. Install Solar Panel Mounts</h6>
-                                <p class="sub-heading">We constantly seek to drive up uptime and reliability for our customers, while treading lightly for our neighbours and environments.</p>
+                                <p class="sub-heading" style="min-height: 200px;">We constantly seek to drive up uptime and reliability for our customers, while treading lightly for our neighbours and environments.</p>
                                 <a href="{{ route('home') }}" class="btn-read-more">Read More <i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                             <div class="text-wrap">
                                 <h6 class="heading">3. Install the Solar Panels</h6>
                                 <div class="sep clearfix"></div>
-                                <p class="sub-heading">When the mounts are set up, the solar panel itself has to be installed on the mounting structure. Make sure to tighten up all the bolts and nuts so that it stays stable.</p>
+                                <p class="sub-heading" style="min-height: 200px;">When the mounts are set up, the solar panel itself has to be installed on the mounting structure. Make sure to tighten up all the bolts and nuts so that it stays stable.</p>
                                 <a href="{{ route('home') }}" class="btn-read-more">Read More <i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>

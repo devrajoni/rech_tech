@@ -24,6 +24,7 @@ class AdminSeeder extends Seeder
 
         ]);
 
+        $role = Role::where('name', 'Admin')->first();
 
         $permissions = Permission::get();
         foreach ( $permissions as $code ) {

@@ -16,6 +16,10 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,6 +54,9 @@ Route::group(['prefix'=>'backend','as'=>'backend.', 'middleware'=>['auth', 'veri
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
+    Route::resource('categories', CategoryController::class);
+    Route::resource('subCategories', SubCategoryController::class);
+    Route::resource('products', ProductController::class);
     
 });
 
