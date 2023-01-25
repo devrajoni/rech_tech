@@ -1,25 +1,23 @@
 <x-layouts.frontend>
-    <div id="main-content-home" class="site-main clearfix">
+    @include('frontend.home.home._banner')
 
-        @include('frontend.home.home._slider')
+    @include('frontend.home.home._volunteer-feature')
 
-        @include('frontend.home.home._service')
+    @include('frontend.home.home._urgent-campaign')
 
-        @include('frontend.home.home._counter')
+    @include('frontend.home.home._support')
 
-        @include('frontend.home.home._experience')
+    @include('frontend.home.home._recent-campaign')
 
-        @include('frontend.home.home._creative-team')
+    @include('frontend.home.home._environmental-feature')
 
-        @include('frontend.home.home._image')
+    @include('frontend.home.home._sponsor')
 
-        @include('frontend.home.home._work')
+    @include('frontend.home.home._testimonial')
 
-        @include('frontend.home.home._request')
+    @include('frontend.home.home._blog')
 
-        @include('frontend.home.home._question')
+    @include('frontend.home.home._work')
 
-        @include('frontend.home.home._article')
-
-    </div>
+    @include('frontend.home.home._sponsor')
 </x-layouts.frontend>

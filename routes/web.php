@@ -3,15 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\AboutController;
-use App\Http\Controllers\Frontend\PricingController;
-use App\Http\Controllers\Frontend\TeamController;
-use App\Http\Controllers\Frontend\FaqController;
-use App\Http\Controllers\Frontend\ServiceController;
-use App\Http\Controllers\Frontend\ServiceDetailsController;
+use App\Http\Controllers\Frontend\ProductsController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\ProjectController;
-use App\Http\Controllers\Frontend\ProjectDetailsController;
-use App\Http\Controllers\Frontend\BlogController;
-use App\Http\Controllers\Frontend\BlogDetailsController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\UserController;
@@ -19,6 +13,8 @@ use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\ProjectsController;
+use App\Http\Controllers\Backend\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,15 +32,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix'=>'frontend','as'=>'frontend.'], function(){
     Route::get('/about', [AboutController::class, 'index'])->name('about');
-    Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
-    Route::get('/team', [TeamController::class, 'index'])->name('team');
-    Route::get('/faq', [FaqController::class, 'index'])->name('faq');
-    Route::get('/service', [ServiceController::class, 'index'])->name('service');
-    Route::get('/service/details', [ServiceDetailsController::class, 'index'])->name('service-details');
+    Route::get('/product', [ProductsController::class, 'index'])->name('product');
+    Route::get('/cart', [CartController::class, 'index'])->name('cart');
     Route::get('/project', [ProjectController::class, 'index'])->name('project');
-    Route::get('/project/details', [ProjectDetailsController::class, 'index'])->name('project-details');
-    Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-    Route::get('/blog/details', [BlogDetailsController::class, 'index'])->name('blog-details');
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 });
 
@@ -57,7 +47,9 @@ Route::group(['prefix'=>'backend','as'=>'backend.', 'middleware'=>['auth', 'veri
     Route::resource('categories', CategoryController::class);
     Route::resource('subCategories', SubCategoryController::class);
     Route::resource('products', ProductController::class);
-    
+    Route::resource('projects', ProjectsController::class);
+    Route::get('/settings/{tab?}', [SettingController::class, 'index'])->name('settings.index');
+    Route::put('/settings/update', [SettingController::class, 'update'])->name('settings.update');
 });
 
 require __DIR__.'/auth.php';

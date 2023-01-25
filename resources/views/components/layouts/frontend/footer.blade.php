@@ -1,86 +1,145 @@
-<footer id="footer" class="style-1 clearfix">
-    <img class="bg-right" src="{{ asset('frontend/assets/img/bg-footer-2.png') }}" alt="Image">
-    <div id="footer-widgets" class="container">
-        <div class="row ">
-            <div class="col-lg-3 col-md-6">
-                <div class="widget widget_text">
-                    <div class="textwidget">
-                        <img src="{{ asset('frontend/assets/img/logo-dark.png') }}" alt="Image" >
-                        <p class="margin-bottom-15">REES TECH operates with a well-thought-out plan based on scientific foundations to provide you with solar energy solutions with more accuracy and lower cost.To contact our experts, please send an e-mail with your inquiry</p>
-                        <div class="footer-socials">
-                            <div class="inner">                               
-                                <span class="icons">
-                                    <a class="active" href="#"><i class="fa fa-facebook-square"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-google"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest-p"></i></a> 
-                                </span>
-                            </div>
-                        </div><!-- /.footer-socials -->
+<footer class="footer-section">
+    <div class="footer-top" style="background-image: url({{ asset('frontend/assets/images/footer/bg-image.jpg') }}); background-position: center bottom; overflow: hidden;">
+        <div class="container">
+            <div class="top">
+                <div class="post-item" data-aos="fade-right" data-aos-duration="700">
+                    <div class="post-thumb">
+                        <img src="{{ asset('frontend/assets/images/footer/icon/01.png') }}" alt="footer">
                     </div>
-                </div><!-- /.widget_text -->
-                <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="0"></div>
-            </div><!-- /.col -->                 
-            <div class="col-lg-2 col-md-6">
-                <div class="themesflat-spacer clearfix" data-desktop="10" data-mobile="0" data-smobile="50"></div>
-                <div class="widget widget_services">
-                    <h3 class="widget-title margin-bottom-30">Services</h3>
-                    <ul class="service-list">
-                        <li><a href="{{ route('frontend.service-details') }}">Conditions</a></li>
-                        <li><a href="{{ route('frontend.service-details') }}">Terms of Use</a></li>
-                        <li><a href="{{ route('frontend.service') }}">Our Services</a></li>
-                        <li><a href="{{ route('frontend.blog') }}">New Guests List</a></li>
-                        <li><a href="{{ route('frontend.team') }}">The Team List</a></li>
-                    </ul>
+                    <div class="post-content">
+                        <h6>Give us a Call</h6>
+                        <p>962-478-123-4567</p>
+                    </div>
                 </div>
-            </div><!-- /.col -->
-
-            <div class="col-lg-4 col-md-6">
-                <div class="themesflat-spacer clearfix" data-desktop="10" data-mobile="50" data-smobile="50"></div>
-
-                <div class="widget widget_Latest-post">
-                    <h3 class="widget-title">Latest Post</h3>
-                    <ul class="lastest-posts data-effect clearfix">
-                        <li class="clearfix">
-                            <div class="thumb ">
-                                <img src="{{ asset('frontend/assets/img/post/recent-new-4.jpg') }}" alt="Image" >
-                            </div>
-                            <div class="text">
-                                <span class="post-date">December 7, 2021</span>
-                                <h4><a href="{{ route('frontend.blog') }}">Bigg Ideas Of Business
-                                    branding Info.</a></h4>                                       
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <div class="thumb ">
-                                <img src="{{ asset('frontend/assets/img/post/recent-new-5.jpg') }}" alt="Image" >
-                            </div>
-                            <div class="text">
-                                <span class="post-date">December 7, 2021</span>
-                                <h4><a href="{{ route('frontend.blog') }}">Bigg Ideas Of Business
-                                    branding Info.</a></h4>                                        
-                            </div>
-                        </li>                                
-                    </ul>
-                </div><!-- /.widget_lastest -->                       
-            </div><!-- /.col -->
-
-            <div class=" col-lg-3 col-md-6">
-                <div class="themesflat-spacer clearfix" data-desktop="5" data-mobile="50" data-smobile="50"></div>
-                <div class="widget widget_email">
-                    <h3 class="widget-title margin-bottom-30">Subscribe</h3>
-                    <div class="email-form ">
-                        <div class="Email">
-                            <input type="text" placeholder="Email">
-                        </div>
-                        <div>
-                            <button class="btn-subcriber">Subscribe</button>
-                        </div>
-                        <span class="tittle-email">Get the latest updates via email. Any time you may unsubscribe</span>
+                <div class="post-item" data-aos="fade-up" data-aos-duration="700">
+                    <div class="post-thumb">
+                        <img src="{{ asset('frontend/assets/images/footer/icon/02.png') }}" alt="footer">
                     </div>
-                </div><!-- /.widget_instagram -->
-            </div><!-- /.col -->
-        </div><!-- /.themesflat-row -->
-    </div><!-- /#footer-widgets -->
+                    <div class="post-content">
+                        <h6>Send us a Message</h6>
+                        <p>envishare@gmail.com</p>
+                    </div>
+                </div>
+                <div class="post-item" data-aos="fade-left" data-aos-duration="700">
+                    <div class="post-thumb">
+                        <img src="{{ asset('frontend/assets/images/footer/icon/03.png') }}" alt="footer">
+                    </div>
+                    <div class="post-content">
+                        <h6>Visit our Location</h6>
+                        <p>07 Suitland Street 120 USA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom row justify-content-center">
+                <div class="col-xl-4 col-lg-6 col-12" data-aos="fade-right" data-aos-duration="700">
+                    <div class="bottom-item">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="{{ asset('frontend/assets/images/logo/01.png') }}" alt="footer-logo"></a>
+                        </div>
+                        <p>Monotnec deplos copertve chanvae anding crorate Qhanin Unique Qnderwhe Premum Converenc With
+                        Uheing Mutmeda Nquel Undehele Mandinge theme Qhanin Unique Qnderwhe Premum Converenc With Environment & Ecology Theme. </p>
+                        <a href="#" class="custom-btn">Read More <i class="fas fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-12" data-aos="fade-up" data-aos-duration="700">
+                    <div class="bottom-item">
+                        <h4>Recent Blog Posts</h4>
+                        <ul>
+                            <li class="post-item">
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{{ asset('frontend/assets/images/footer/blog/01.jpg') }}" alt="footer"></a>
+                                </div>
+                                <div class="post-content">
+                                    <h6>
+                                        <a href="#">Enable Seaming Matera Foring Orhonal Ouring Vortals</a>
+                                    </h6>
+                                    <p>20 December 2019</p>
+                                </div>
+                            </li>
+                            <li class="post-item">
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{{ asset('frontend/assets/images/footer/blog/02.jpg') }}" alt="footer"></a>
+                                </div>
+                                <div class="post-content">
+                                    <h6>
+                                        <a href="#">Unable Seaming Matera Foring Erhonal Ouring Vortals</a>
+                                    </h6>
+                                    <p>20 December 2019</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-12" data-aos="fade-left" data-aos-duration="700">
+                    <div class="bottom-item">
+                        <h4>Our Photo Gallery</h4>
+                        <ul class="footer-gallery">
+                            <li>
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{{ asset('frontend/assets/images/footer/gallery/01.jpg') }}" alt="footer-gallery"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{{ asset('frontend/assets/images/footer/gallery/02.jpg') }}" alt="footer-gallery"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{{ asset('frontend/assets/images/footer/gallery/03.jpg') }}" alt="footer-gallery"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{{ asset('frontend/assets/images/footer/gallery/04.jpg') }}" alt="footer-gallery"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{{ asset('frontend/assets/images/footer/gallery/05.jpg') }}" alt="footer-gallery"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{{ asset('frontend/assets/images/footer/gallery/06.jpg') }}" alt="footer-gallery"></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="section-wrapper">
+                <div class="left">
+                    <span>&copy; 2019 <a href="index.html">EnviShare</a> Design by <a href="#">Labartisan.</a></span>
+                </div>
+                <ul class="right">
+                    <li>
+                        <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <span>Facebook</span>
+                    </li>
+                    <li>
+                        <a class="google" href="#"><i class="fab fa-google-plus-g"></i></a>
+                        <span>Google Plus</span>
+                    </li>
+                    <li>
+                        <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+                        <span>Twitter</span>
+                    </li>
+                    <li>
+                        <a class="pinterest" href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <span>Pinterest</span>
+                    </li>
+                    <li>
+                        <a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <span>Linkedin</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>

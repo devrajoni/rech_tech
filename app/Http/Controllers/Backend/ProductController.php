@@ -33,9 +33,9 @@ class ProductController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        return view('backend.product.form', compact('product'));
     }
 
     public function update(Request $request, $id)
@@ -43,8 +43,10 @@ class ProductController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('backend.products.index')->flashify('Deleted', 'Data has been deleted successfully.');
+
     }
 }

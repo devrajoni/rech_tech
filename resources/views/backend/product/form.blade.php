@@ -17,7 +17,7 @@
                         <h3 class="title">Add Product</h3>
                     </div>
                     <div class="box-body">
-                        <livewire:product-form />
+                        <livewire:product-form :product_id="$product->id ?? null" />
                     </div>
                 </div>
             </div>

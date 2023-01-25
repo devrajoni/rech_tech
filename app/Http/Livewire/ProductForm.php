@@ -6,20 +6,25 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Product;
-use App\Http\Requests\Backend\ProductFormRequest;
+use Spatie\Permission\Models\Role;
+use Spatie\MediaLibraryPro\Http\Livewire\Concerns\WithMedia;
+use Livewire\WithFileUploads;
+use Spatie\MediaLibrary\PathGenerator\BasePathGenerator;
 
 class ProductForm extends Component
 {
+    use WithFileUploads;
     public $product_id;
 
     public $category_id;
     public $sub_category_id;
 
-    public $vendor_id;
+    public $title;
 
-    public $supplier_id;
-
+    public $image;
     public $name;
+
+    public $mediaComponentNames = ['image'];
 
     public $sku;
 
@@ -31,26 +36,45 @@ class ProductForm extends Component
 
     public $discount;
 
-    public $price;
-
     public $in_stock;
 
-    public $status;
+    public $status = 'Active';
+
+    public function mount()
+    {
+        if($this->product_id){
+            $product = Product::find($this->product_id);
+
+            $this->category_id = $product->category_id;
+            $this->sub_category_id = $product->sub_category_id;
+            $this->title = $product->title;
+            $this->name = $product->name;
+            $this->sku = $product->sku;
+            $this->description = $product->description;
+            $this->buying_price = $product->buying_price;
+            $this->selling_price = $product->selling_price;
+            $this->discount = $product->discount;
+            $this->status = $product->status;
+
+        }
+        if($this->product_id){
+            $this->in_stock = "";
+        }
+
+    }
+
 
     public function submit()
     {
         $this->validate([
-            'vendor_id' => [
-                'nullable',
-            ],
-            'supplier_id' => [
-                'nullable',
-            ],
             'category_id' => [
                 'nullable',
             ],
             'sub_category_id' => [
                 'nullable',
+            ],
+            'title' => [
+                'required',
             ],
             'name' => [
                 'required',
@@ -70,9 +94,6 @@ class ProductForm extends Component
             'discount' => [
                 'nullable',
             ],
-            'price' => [
-                'required',
-            ],
             'in_stock' => [
                 'nullable',
             ],
@@ -80,60 +101,39 @@ class ProductForm extends Component
                 'required',
             ],
         ]);
-        Product::create([
-            'vendor_id' => $this->vendor_id,
-            'supplier_id' => $this->supplier_id,
+        $data = [
             'category_id' => $this->category_id,
             'sub_category_id' => $this->sub_category_id,
+            'title' => $this->title,
             'name' => $this->name,
             'sku' => $this->sku,
             'description' => $this->description,
             'buying_price' => $this->buying_price,
             'selling_price' => $this->selling_price,
             'discount' => $this->discount,
-            'price' => $this->price,
+            'price' => $this->selling_price - $this->discount,
             'in_stock' => $this->in_stock,
             'status' => $this->status,
-        ]);
+        ];
 
-        flashify()->livewire($this)->fire('created');
+            $data->addMedia(['image'])->toMediaCollection('image');
 
-        $this->reset('vendor_id', 'supplier_id', 'category_id', 'sub_category_id', 'name', 'sku', 'description', 'buying_price', 'selling_price', 'discount', 'price', 'in_stock', 'status');
+        if($this->product_id) {
+
+           $product = Product::find($this->product_id);
+
+           $product->update($data);
+        }else{
+            $add = Product::create($data);
+
+        }
+
+
+        return redirect()->route('backend.products.index')->flashify($this->product_id ? 'updated' : 'created');
     }
 
-    public function edit(Product $product)
-    {
-        $this->product_id = $product->id;
-        $this->vendor_id = $product->vendor_id;
-        $this->supplier_id = $product->supplier_id;
-        $this->category_id = $product->category_id;
-        $this->sub_category_id = $product->sub_category_id;
-        $this->name = $product->name;
-        $this->sku = $product->sku;
-        $this->description = $product->description;
-        $this->buying_price = $product->buying_price;
-        $this->selling_price = $product->selling_price;
-        $this->discount = $product->discount;
-        $this->price = $product->price;
-        $this->in_stock = $product->in_stock;
-        $this->status = $product->status;
-
-    }
-
-    public function delete(Product $product)
-    {
-        $product->delete();
-
-        flashify()->livewire($this)->fire('deleted');
-    }
     public function render()
     {
-        $data['products'] = Product::get();
-
-        $data['vendors'] = User::where('role_id', 3)->get();
-
-        $data['suppliers'] = User::where('role_id', 2)->get();
-
         $data['categories'] = Category::where('parent_id', null)->get();
 
         $data['subCategories'] = $this->category_id

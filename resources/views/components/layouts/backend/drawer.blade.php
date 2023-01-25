@@ -25,6 +25,11 @@
                         <li><a href="{{ route('backend.products.index') }}"><span>Product</span></a></li>
                     </ul>
                 </li>
+                <li class="has-sub-menu"><a href="#"><i class="ti-package"></i> <span>Project</span></a>
+                    <ul class="side-header-sub-menu">
+                        <li><a href="{{ route('backend.projects.index') }}"><span>Project</span></a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
 

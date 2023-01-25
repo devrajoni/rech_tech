@@ -24,13 +24,9 @@
                             <thead>
                                 <tr>
                                     <th class="text-start border-0">{{ __('SL') }}</th>
-                                    <th class="text-center border-0">{{ __('Vendor') }}</th>
-                                    <th class="text-center border-0">{{ __('Supplier') }}</th>
                                     <th class="text-center border-0">{{ __('Category') }}</th>
-                                    <th class="text-center border-0">{{ __('Brand') }}</th>
-                                    <th class="text-center border-0">{{ __('Unit') }}</th>
                                     <th class="text-center border-0">{{ __('Name') }}</th>
-                                    <th class="text-center border-0">{{ __('Sku') }}</th>
+                                    <th class="text-center border-0">{{ __('SKU') }}</th>
                                     <th class="text-center border-0">{{ __('Buying Price') }}</th>
                                     <th class="text-center border-0">{{ __('Selling Price') }}</th>
                                     <th class="text-center border-0">{{ __('Discount') }}</th>
@@ -44,7 +40,7 @@
                                 @foreach($products as $product)
                                     <tr>
                                         <td class="text-start">{{ $loop->iteration }}</td>
-                                        <td class="text-center">{{ $product->category->name }}</td>
+                                        <td class="text-center">{{ $product->category->name ?? 'N/A' }}</td>
                                         <td class="text-center">{{ $product->name }}</td>
                                         <td class="text-center">{{ $product->sku }}</td>
                                         <td class="text-center">{{ $product->buying_price }}</td>
@@ -52,13 +48,18 @@
                                         <td class="text-center">{{ $product->discount }}</td>
                                         <td class="text-center">{{ $product->price }}</td>
                                         <td class="text-center">{{ $product->in_stock }}</td>
-                                        <td class="text-end">
-                                            <button type="button" class="btn btn-sm" wire:click="edit({{ $product->id }})">
+                                        <td class="text-center">{{ $product->status }}</td>
+                                        <td class="d-flex">
+                                            <a href="{{ route('backend.products.edit', $product->id )}}" class="btn btn-sm">
                                                 <i class="ph-note-pencil-bold text-primary fs-3"></i>
-                                            </button>
-                                            <button type="button"  class="btn btn-sm" wire:click="delete({{ $product->id }})">
-                                                <i class="ph-trash-bold text-danger fs-3"></i>
-                                            </button>
+                                            </a>
+                                            <form action="{{ route('backend.products.destroy', $product->id)}}" method="POST" onsubmit="return confirm('Are you sure?');">
+                                                @csrf
+                                                @method('delete')
+                                                <button  class="btn btn-sm">
+                                                    <i class="ph-trash-bold text-danger fs-3"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

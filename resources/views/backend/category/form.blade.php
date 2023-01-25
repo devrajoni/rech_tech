@@ -52,12 +52,13 @@
             </div>
         </div>
     </div>
-</x-layouts.backend>
-<x-layouts.backend.script>
-    <script>
-        $(document).ready(function(){
+    <x-layouts.backend.script>
+        <script>
+            $(document).ready(function(){
 
-        $('#status').val("{{$category->status ?? ''}}");
-        });
-    </script>
-</x-layouts.backend.script>
+            $('#status').val("{{$category->status ?? ''}}");
+            });
+        </script>
+    </x-layouts.backend.script>
+</x-layouts.backend>
+

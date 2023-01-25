@@ -228,7 +228,7 @@
                                             <li><a href="#"><i class="zmdi zmdi-wallpaper"></i>Activity</a></li>
                                         </ul>
                                         <ul>
-                                            <li><a href="#"><i class="zmdi zmdi-settings"></i>Setting</a></li>
+                                            <li><a href="{{ route('backend.settings.index') }}"><i class="zmdi zmdi-settings"></i>Setting</a></li>
                                             <li>
                                                 <form action="{{ route('logout') }}" method="POST">
                                                    @csrf

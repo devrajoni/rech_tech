@@ -1,14 +1,23 @@
-<div id="header-banner" class="header-banner clearfix">
-    <div id="header-banner-inner" class="container clearfix">
-        <div class="header-banner-inner-wrap">                    
-            <div class="blog-standar-start">
-                <h1 class="blog-standar-start1">ABOUT US</h1>
+<section class="page-header">
+    <div class="page-header-area">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="page-header-title">
+                    <h2>About</h2>
+                    <h2><span>Welcome to EnviShare</span></h2>
+                </div>
+                <ul class="breadcamp">
+                    <li>
+                        <a href="#"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Pages</a>
+                    </li>
+                    <li>
+                        <a class="active">About Us</a>
+                    </li>
+                </ul>
             </div>
-            <h2 class="blog-standar-end">
-                <a href="{{ route('home') }}" class="blog-standar-end">Home</a> |
-                <span class="blog-standar-end">About Us</span>
-            </h2>               
-        </div><!-- /.header-banner-inner-wrap -->
-    </div><!-- /#header-banner-inner -->  
-            
-</div>
+        </div>
+    </div>
+</section>
