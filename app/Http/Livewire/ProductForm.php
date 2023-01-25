@@ -7,9 +7,9 @@ use App\Models\Category;
 use App\Models\User;
 use App\Models\Product;
 use Spatie\Permission\Models\Role;
-use Spatie\MediaLibraryPro\Http\Livewire\Concerns\WithMedia;
 use Livewire\WithFileUploads;
-use Spatie\MediaLibrary\PathGenerator\BasePathGenerator;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
 
 class ProductForm extends Component
 {
@@ -76,6 +76,8 @@ class ProductForm extends Component
             'title' => [
                 'required',
             ],
+            'image' => ['image'],
+
             'name' => [
                 'required',
             ],
@@ -106,6 +108,7 @@ class ProductForm extends Component
             'sub_category_id' => $this->sub_category_id,
             'title' => $this->title,
             'name' => $this->name,
+
             'sku' => $this->sku,
             'description' => $this->description,
             'buying_price' => $this->buying_price,
@@ -116,7 +119,7 @@ class ProductForm extends Component
             'status' => $this->status,
         ];
 
-            $data->addMedia(['image'])->toMediaCollection('image');
+
 
         if($this->product_id) {
 
@@ -124,7 +127,12 @@ class ProductForm extends Component
 
            $product->update($data);
         }else{
-            $add = Product::create($data);
+            $product = (object) $data;
+            $product->addMedia(public_path('uploads/' . $this->image))->toMediaCollection('image');
+
+            Product::create($data);
+
+
 
         }
 

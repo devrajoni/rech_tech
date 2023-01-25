@@ -12,7 +12,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Product extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia;
+    use HasFactory; use InteractsWithMedia;
 
     protected $fillable = [
         'category_id',
@@ -28,6 +28,9 @@ class Product extends Model implements HasMedia
         'in_stock',
         'status',
     ];
+
+
+
 
     public function vendor()
     {

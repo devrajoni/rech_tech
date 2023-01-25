@@ -3,7 +3,7 @@
         <div class="row justify-content-between align-items-center mb-10">
             <div class="col-12 col-lg-auto mb-20">
                 <div class="page-heading">
-                    <h3>Category <span>/ eCommerce</span></h3>
+                    <h3>Project<span>/ eCommerce</span></h3>
                 </div>
             </div>
             <div class="col-12 col-lg-auto mb-20">
@@ -15,7 +15,7 @@
         <div class="col-12 mb-30">
             <div class="box">
                 <div class="box-head d-flex justify-content-between">
-                    <h4 class="title">Category Table</h4>
+                    <h4 class="title">Project Table</h4>
                     <a href="{{ route('backend.projects.create') }}" class="button button-primary button-outline button-sm">Create</a>
                 </div>
                 <div class="box-body">
@@ -23,17 +23,26 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>SL</th>
+                                    <th>Category</th>
+                                    <th>Title</th>
                                     <th>Name</th>
-                                    <th>status</th>
+                                    <th>Image</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($projects as $project)
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $project->category_id }}</td>
+                                        <td>{{ $project->title }}</td>
+                                        <td>{{ $project->name }}</td>
+                                        <td> <img src="{{ asset($project->image) }}" style="height: 50px; width: 50px; border-radius: 100%;" /></td>
+                                        <td style="height: 50px; width: 50px; border-radius: 100%;">{!! $project->description !!}</td>
+                                        <td>{{ $project->status }}</td>
                                         <td class="d-flex">
                                             <a href="" class="btn btn-sm">
                                                 <i class="ph-note-pencil-bold text-primary fs-3"></i>
@@ -47,6 +56,7 @@
                                             </form>
                                         </td>
                                     </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

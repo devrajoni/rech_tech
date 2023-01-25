@@ -12,7 +12,9 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-        return view('backend.project.index');
+        $projects = Project::get();
+
+        return view('backend.project.index', compact('projects'));
     }
 
     public function create()
