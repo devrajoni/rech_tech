@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
+use App\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\PermissionRegistrar;
 use Illuminate\Http\Request;
@@ -13,6 +14,11 @@ class RoleController extends Controller
     public function index()
     {
         $data['roles'] = Role::get();
+
+        $data['users'] = Role::where('id', auth()->user()->role_id)->count();
+
+        $data['permissions'] = Permission::where('id', auth()->user()->role_id)->count();
+
         return view('backend.role.index', $data);
     }
 

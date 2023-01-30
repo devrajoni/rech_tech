@@ -14,7 +14,10 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProjectsController;
+use App\Http\Controllers\Backend\ProjectCategoryController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\ProjectGalleryController;
+use App\Http\Controllers\Backend\HeroSectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +51,9 @@ Route::group(['prefix'=>'backend','as'=>'backend.', 'middleware'=>['auth', 'veri
     Route::resource('subCategories', SubCategoryController::class);
     Route::resource('products', ProductController::class);
     Route::resource('projects', ProjectsController::class);
+    Route::resource('project-categories', ProjectCategoryController::class);
+    Route::resource('project-galleries', ProjectGalleryController::class);
+    Route::resource('hero-sections', HeroSectionController::class);
     Route::get('/settings/{tab?}', [SettingController::class, 'index'])->name('settings.index');
     Route::put('/settings/update', [SettingController::class, 'update'])->name('settings.update');
 });

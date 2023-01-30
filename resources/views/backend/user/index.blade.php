@@ -43,7 +43,7 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->gender }}</td>
-                                    <td>{{ $user->role_id }}</td>
+                                    <td>{{ $user->role->name ?? null }}</td>
                                     <td class="d-flex">
                                         <a href="{{ route('backend.users.edit', $user->id)}}" class="btn btn-sm">
                                             <i class="ph-note-pencil-bold text-primary fs-3"></i>

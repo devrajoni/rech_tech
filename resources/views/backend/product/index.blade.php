@@ -26,6 +26,7 @@
                                     <th class="text-start border-0">{{ __('SL') }}</th>
                                     <th class="text-center border-0">{{ __('Category') }}</th>
                                     <th class="text-center border-0">{{ __('Name') }}</th>
+                                    <th class="text-center border-0">{{ __('Image') }}</th>
                                     <th class="text-center border-0">{{ __('SKU') }}</th>
                                     <th class="text-center border-0">{{ __('Buying Price') }}</th>
                                     <th class="text-center border-0">{{ __('Selling Price') }}</th>
@@ -42,6 +43,12 @@
                                         <td class="text-start">{{ $loop->iteration }}</td>
                                         <td class="text-center">{{ $product->category->name ?? 'N/A' }}</td>
                                         <td class="text-center">{{ $product->name }}</td>
+                                        <td class="text-center">
+                                            @foreach ($product->getMedia('product') as $image)
+                                                <img src="{{ $image->getUrl() }}" alt="{{ $image->getUrl() }}"
+                                                style="height: 60px; width: 60px; border-radius: 100%;">
+                                            @endforeach
+                                        </td>
                                         <td class="text-center">{{ $product->sku }}</td>
                                         <td class="text-center">{{ $product->buying_price }}</td>
                                         <td class="text-center">{{ $product->selling_price }}</td>

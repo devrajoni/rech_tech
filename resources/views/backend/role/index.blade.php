@@ -25,7 +25,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Role</th>
-                                    <th>Employees</th>
+                                    <th>User</th>
                                     <th>Permission</th>
                                     <th>Action</th>
                                 </tr>
@@ -35,8 +35,8 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $role->name }}</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{ $users }}</td>
+                                        <td>{{ $permissions }}</td>
                                         <td class="d-flex">
                                             <a href="{{ route('backend.roles.edit', $role->id )}}" class="btn btn-sm">
                                                 <i class="ph-note-pencil-bold text-primary fs-3"></i>

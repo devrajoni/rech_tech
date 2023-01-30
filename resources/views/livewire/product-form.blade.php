@@ -48,7 +48,7 @@
                 type="file"
                 name="image"
                 wire:model.defer="image"
-                id="image"
+                class="file-pond"
                 required
             />
 

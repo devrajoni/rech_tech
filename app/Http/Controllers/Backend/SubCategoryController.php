@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\CategoryRequestForm;
+use App\Http\Requests\Backend\SubCategoryFormRequest;
 use App\Models\Category;
 
 class SubCategoryController extends Controller
@@ -20,7 +20,7 @@ class SubCategoryController extends Controller
         return view('backend.sub-category.form', $data);
     }
 
-    public function store(CategoryRequestForm $request)
+    public function store(SubCategoryFormRequest $request)
     {
         Category::create($request->persist());
         return redirect()->route('backend.subCategories.index')->flashify('Created', 'Data has been created successfully.');
@@ -38,7 +38,7 @@ class SubCategoryController extends Controller
         return view('backend.sub-category.form', $data);
     }
 
-    public function update(CategoryRequestForm $request, Category $subCategory)
+    public function update(SubCategoryFormRequest $request, Category $subCategory)
     {
         $subCategory->update($request->persist());
         return redirect()->route('backend.subCategories.index')->flashify('Updated', 'Data has been updated successfully.');

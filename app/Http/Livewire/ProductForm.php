@@ -10,7 +10,6 @@ use Spatie\Permission\Models\Role;
 use Livewire\WithFileUploads;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-
 class ProductForm extends Component
 {
     use WithFileUploads;
@@ -123,14 +122,20 @@ class ProductForm extends Component
 
         if($this->product_id) {
 
-           $product = Product::find($this->product_id);
+           $po = Product::find($this->product_id);
 
-           $product->update($data);
+           $po->update($data);
+
+        if(['image']){
+            $po->clearMediaCollection('product');
+            $po->addMedia($this->image)->toMediaCollection('product');
+        }
+
+
         }else{
-            $product = (object) $data;
-            $product->addMedia(public_path('uploads/' . $this->image))->toMediaCollection('image');
+            $product = Product::create($data);
 
-            Product::create($data);
+            $product->addMedia($this->image)->toMediaCollection('product');
 
 
 

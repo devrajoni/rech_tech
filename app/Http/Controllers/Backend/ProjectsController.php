@@ -4,44 +4,43 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Image;
-use File;
 use App\Models\Project;
+use App\Models\ProjectCategory;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProjectsController extends Controller
 {
     public function index()
     {
-        $projects = Project::get();
+        $data['projects'] = Project::with('projectCategory')->get();
 
-        return view('backend.project.index', compact('projects'));
+        return view('backend.project.index', $data);
     }
 
     public function create()
     {
-        return view('backend.project.form');
+        $data['categories'] = ProjectCategory::get();
+        return view('backend.project.form', $data);
     }
 
     public function store(Request $request)
     {
-        $save_image = null;
-        if ($request->image) {
-            $image = $request->file('image');
-            $name_gen = "project" . "Banner" . time() . '.' . $image->extension();
-            $location = public_path('uploads/project/' . $name_gen);
-            Image::make($image)->resize(2100, 1094)->save($location);
-            $save_image = 'uploads/project/' . $name_gen;
-        }
-
-        Project::create([
-            'category_id' => $request->category_id,
-            'title' => $request->title,
-            'name' => $request->name,
-            'image' => $save_image,
-            'description' => $request->description,
-            'status' => $request->status,
+        $validate = $request->validate([
+            'category_id' => ['nullable'],
+            'title' => ['required'],
+            'name' => ['required'],
+            'image' => ['required'],
+            'description' => ['nullable'],
+            'status' => ['required'],
 
         ]);
+        $project = Project::create($validate);
+
+        if($request->hasFile('image')){
+            $project->addMedia($request->image)
+                ->toMediaCollection('project');
+        }
+
 
         return redirect()->route('backend.projects.index')->flashify('Created', 'Data has been created successfully.');
 
@@ -52,18 +51,38 @@ class ProjectsController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Project $project)
     {
-        //
+        $data['categories'] = ProjectCategory::get();
+        $data['project'] = $project;
+        return view('backend.project.form', $data);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $validate = $request->validate([
+            'category_id' => ['nullable'],
+            'title' => ['required'],
+            'name' => ['required'],
+            'image' => ['required'],
+            'description' => ['nullable'],
+            'status' => ['required'],
+
+        ]);
+        $project->update($validate);
+
+        if($request->hasFile('image')){
+            $project->clearMediaCollection('project');
+            $project->addMedia($request->image)->toMediaCollection('project');
+        }
+        return redirect()->route('backend.projects.index')->flashify('Updated', 'Data has been updated successfully.');
+
     }
 
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('backend.projects.index')->flashify('Deleted', 'Data has been deleted successfully.');
     }
 }

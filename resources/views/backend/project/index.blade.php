@@ -28,7 +28,6 @@
                                     <th>Title</th>
                                     <th>Name</th>
                                     <th>Image</th>
-                                    <th>Description</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -37,17 +36,21 @@
                                 @foreach($projects as $project)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $project->category_id }}</td>
+                                        <td>{{ $project->projectCategory->name ?? null }}</td>
                                         <td>{{ $project->title }}</td>
                                         <td>{{ $project->name }}</td>
-                                        <td> <img src="{{ asset($project->image) }}" style="height: 50px; width: 50px; border-radius: 100%;" /></td>
-                                        <td style="height: 50px; width: 50px; border-radius: 100%;">{!! $project->description !!}</td>
+                                        <td>
+                                            @foreach ($project->getMedia('project') as $image)
+                                                <img src="{{ $image->getUrl() }}" alt="{{ $image->getUrl() }}"
+                                                style="height: 70px; width: 150px;">
+                                            @endforeach
+                                        </td>
                                         <td>{{ $project->status }}</td>
                                         <td class="d-flex">
-                                            <a href="" class="btn btn-sm">
+                                            <a href="{{ route('backend.projects.edit', $project->id) }}" class="btn btn-sm">
                                                 <i class="ph-note-pencil-bold text-primary fs-3"></i>
                                             </a>
-                                            <form action="" method="POST" onsubmit="return confirm('Are you sure?');">
+                                            <form action="{{ route('backend.projects.destroy', $project->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
                                                 @csrf
                                                 @method('delete')
                                                 <button  class="btn btn-sm">

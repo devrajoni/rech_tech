@@ -17,7 +17,7 @@ class UserController extends Controller
 {
      public function index()
     {
-        $data['users'] = User::get();
+        $data['users'] = User::with('role')->get();
         return view('backend.user.index', $data);
     }
 

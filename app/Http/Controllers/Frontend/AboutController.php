@@ -4,12 +4,14 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\HeroSection;
 
 class AboutController extends Controller
 {
     public function index()
     {
-        return view('frontend.about.about-us');
+        $data['heroSections'] = HeroSection::get();
+        return view('frontend.about.about-us', $data);
     }
 
     public function create()

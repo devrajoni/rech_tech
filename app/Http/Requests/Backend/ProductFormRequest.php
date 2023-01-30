@@ -25,12 +25,6 @@ class ProductFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'vendor_id' => [
-                'nullable',
-            ],
-            'supplier_id' => [
-                'nullable',
-            ],
             'category_id' => [
                 'nullable',
             ],

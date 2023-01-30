@@ -1,4 +1,5 @@
-<section class="page-header">
+@foreach($heroSections as $heroSection)
+<section class="page-header" style="background-image: url({{ $heroSection->getFirstMediaUrl('slider', 'hero') }}); background-size: cover;">
     <div class="page-header-area">
         <div class="container">
             <div class="page-header-content">
@@ -14,3 +15,4 @@
         </div>
     </div>
 </section>
+@endforeach

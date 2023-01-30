@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/swiper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/common.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
 </head>
 <body>

@@ -31,15 +31,11 @@ class Product extends Model implements HasMedia
 
 
 
-
-    public function vendor()
+    public function registerAllMediaConversions(): void
     {
-        return $this->belongsTo(User::class, 'vendor_id');
-    }
-
-    public function supplier()
-    {
-        return $this->belongsTo(User::class, 'supplier_id');
+        $this->addMediaConversion('image')
+            ->width(490)
+            ->height(490);
     }
 
     public function category()

@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $data['products'] = Product::with('category')->with('vendor')->with('supplier')->get();
+        $data['products'] = Product::with('category')->get();
 
         return view('backend.product.index', $data);
     }

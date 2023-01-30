@@ -38,7 +38,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-    ];
+    ]; 
 
     /**
      * The attributes that should be cast.
@@ -50,7 +50,7 @@ class User extends Authenticatable
     ];
 
 
-    // public function role(){
-    //     return $this->belongsTo('App\Models\Role');
-    // }
+    public function role(){
+        return $this->belongsTo(Role::class, 'role_id');
+    }
 }
